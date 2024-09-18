@@ -38,7 +38,14 @@
                                     blink.style.opacity = (blink.style.opacity == 0 ? 2 : 0);
                                 }, 1000);
                             </script>
-                            <label class="validation"><b>Valid from 18/07/2024 to 17/09/2024</b></label>
+                            <label class="validation"><b>Valid from <span id = "date-first">18/07/2024</span> to <span id = "date-end">17/09/2024<span/></b></label>
+                            <script>
+                                const currentDate = new Date();
+                                const endDate = new Date(currentDate);
+                                endDate.setMonth(endDate.getMonth() + 1);
+                                document.getElementById("date-start").textContent = `${06}/${currentDate.getMonth()<=9?`0`+currentDate.getMonth():currentDate.getMonth()}/${currentDate.getFullYear()}`;
+                                document.getElementById("date-end").textContent = `${05}/${(endDate.getMonth() + 1)<=9?`0`+(endDate.getMonth() + 1):(endDate.getMonth() + 1)}/${endDate.getFullYear()}`;
+                            </script>
                         </td>
                     </tr>
                     <tr>
